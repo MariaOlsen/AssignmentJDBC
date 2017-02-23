@@ -41,5 +41,14 @@ public class DBUtil {
 
     }
 
+    public static void processException(SQLException e) {
+        //Codes to identifying errors in various databases.
+        //Since each database have their own codes and descriptions,
+        //error handling like this is necessary to keep track of everything
+        System.err.println("Error message: " + e.getMessage());
+        System.err.println("Error code: " + e.getErrorCode());
+        System.err.println("SQL State: " + e.getSQLState());
+
+    }
 
 }

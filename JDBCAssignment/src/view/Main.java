@@ -30,10 +30,18 @@ public class Main {
             //sets resultset type to a scrollable type (read-only)
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             
-            String query = "SELECT * FROM states";
+            String query = "SELECT stateId, stateName FROM states";
             rs = stmt.executeQuery(query);
             
+            
+            rs.first();
+            
+            while (rs.next()){
+                System.out.println(rs.getString("stateName"));
+            }
             rs.last();
+            
+           
             System.out.println("Number of rows: " + rs.getRow());
             
             System.out.println("CONNECTED!");
