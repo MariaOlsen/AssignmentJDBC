@@ -10,5 +10,5 @@ package model;
  * @author maria
  */
 public enum DBType {
-    
+    HSQLDB, MYSQL, POSTRESQL
 }

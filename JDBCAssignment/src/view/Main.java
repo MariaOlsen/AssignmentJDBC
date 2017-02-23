@@ -5,19 +5,15 @@
  */
 package view;
 
+import control.DBUtil;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import model.DBType;
 
 /**
  *
  * @author maria
  */
 public class Main {
-
-    private static final String USERNAME = "dbuser";
-    private static final String PASSWORD = "dbpassword";
-    private static final String CONN_STRING = "jdbc:postgresql://localhost:5432/explorecalifornia";
 
     /**
      * @param args the command line arguments
@@ -29,7 +25,7 @@ public class Main {
         ResultSet rs = null;
         
         try {
-            con = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+            con = DBUtil.getConnection(DBType.POSTRESQL);
             
             //sets resultset type to a scrollable type (read-only)
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
