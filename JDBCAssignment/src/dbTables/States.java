@@ -14,14 +14,16 @@ import java.text.NumberFormat;
  * @author maria
  */
 public class States {
-       
+
     public static void displayData(ResultSet rs) throws SQLException {
-      
-            while (rs.next()) {
-                String stateFullName = rs.getString("stateId") + ": " + rs.getString("stateName");
-                System.out.println(stateFullName);
-            }
-      
         
+        while (rs.next()) {
+            //Collects data from several columns in database and appends it all together
+            StringBuffer buffer = new StringBuffer();
+
+            buffer.append(rs.getString("stateId") + ": "+ rs.getString("stateName"));
+            System.out.println(buffer.toString());
+        }
+
     }
 }

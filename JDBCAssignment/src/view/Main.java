@@ -6,6 +6,7 @@
 package view;
 
 import control.DBUtil;
+import dbTables.States;
 import java.sql.*;
 import model.DBType;
 
@@ -32,13 +33,10 @@ public class Main {
 
             rs.first();
 
-            while (rs.next()) {
-                System.out.println(rs.getString("stateName"));
-            }
-            rs.last();
-
-            System.out.println("Number of rows: " + rs.getRow());
-
+           
+            States.displayData(rs);
+                    
+                    
             System.out.println("CONNECTED!");
 
         } catch (SQLException ex) {
