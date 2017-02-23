@@ -36,6 +36,11 @@ public class Main {
            
             States.displayData(rs);
                     
+            //Showing off scrollable resultsets: capable of going back and forth between rows
+            rs.last();
+            if (rs.isLast()){
+                System.out.println("Number of rows: " + rs.getRow());
+            }
                     
             System.out.println("CONNECTED!");
 
